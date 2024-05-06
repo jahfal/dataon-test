@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Jenis Kain</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Data Jenis Kain</h2>
+
+<table id="dataKain">
+  <tr>
+    <th>Jenis Kain</th>
+    <th>Nama Kain</th>
+    <th>Kualitas</th>
+    <th>Nama Kualitas</th>
+    <th>Harga</th>
+  </tr>
+</table>
+
+<script>
+    
+let dataKain = [
+    { jenis: 'STB', namaKain: 'Sutra', kualitas: '1', namaKualitas: 'Sangat Bagus', harga: 'Rp 10.000.000' },
+    { jenis: 'STB', namaKain: 'Sutra', kualitas: '2', namaKualitas: 'Bagus', harga: 'Rp 9.000.000' },
+    { jenis: 'STB', namaKain: 'Sutra', kualitas: '3', namaKualitas: 'Cukup Bagus', harga: 'Rp 8.000.000' },
+    { jenis: 'NTB', namaKain: 'Katun', kualitas: '1', namaKualitas: 'Sangat Bagus', harga: 'Rp 10.000.000' },
+    { jenis: 'NTB', namaKain: 'Katun', kualitas: '2', namaKualitas: 'Bagus', harga: 'Rp 10.000.000' },
+    { jenis: 'NTB', namaKain: 'Katun', kualitas: '3', namaKualitas: 'Cukup Bagus', harga: 'Rp 10.000.000' }
+];
+
+function populateTable() {
+    let table = document.getElementById('dataKain');
+
+    dataKain.forEach((item) => {
+        let row = table.insertRow();
+        let jenisCell = row.insertCell(0);
+        let namaKainCell = row.insertCell(1);
+        let kualitasCell = row.insertCell(2);
+        let namaKualitasCell = row.insertCell(3);
+        let hargaCell = row.insertCell(4);
+
+        jenisCell.innerHTML = item.jenis;
+        namaKainCell.innerHTML = item.namaKain;
+        kualitasCell.innerHTML = item.kualitas;
+        namaKualitasCell.innerHTML = item.namaKualitas;
+        hargaCell.innerHTML = item.harga;
+    });
+}
+window.onload = populateTable;
+
+</script>
+
+</body>
+</html>
